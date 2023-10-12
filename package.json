@@ -5,6 +5,7 @@
   "repository": "https://github.com/containerbase/maven-prebuild.git",
   "license": "MIT",
   "author": "Michael Kriese <michael.kriese@visualon.de>",
+  "type": "module",
   "scripts": {
     "lint": "run-s prettier",
     "postinstall": "husky install",
@@ -15,7 +16,7 @@
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
     "npm-run-all": "4.1.5",
-    "prettier": "2.8.8",
+    "prettier": "3.0.3",
     "prettier-plugin-packagejson": "2.4.6"
   },
   "packageManager": "yarn@3.6.4",
