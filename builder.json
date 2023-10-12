@@ -6,5 +6,5 @@
   "versioning": "semver",
   "startVersion": "3.0.4",
   "ignoredVersions": [],
-  "allowedVersions": "3.0.4"
+  "allowedVersions": ">=3.0.4"
 }
