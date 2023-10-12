@@ -30,6 +30,9 @@ jobs:
       - name: enable corepack
         run: corepack enable
 
+      - name: install deps
+        run: yarn install
+
       - name: lint
         run: yarn lint
 
