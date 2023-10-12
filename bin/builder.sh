@@ -4,6 +4,8 @@ set -e
 
 # shellcheck source=/dev/null
 . /usr/local/containerbase/util.sh
+# shellcheck source=/dev/null
+. "/${CONTAINERBASE_DIR}/utils/v2/overrides.sh"
 
 # trim leading v
 TOOL_VERSION=${1#v}
@@ -25,8 +27,7 @@ function main () {
   local checksum_algo
   local expected_checksum
 
-  check_semver "${TOOL_VERSION}" all
-  echo "Building ${NAME} ${TOOL_VERSION}"
+  echo "Building ${TOOL_NAME} ${TOOL_VERSION}"
 
   echo "------------------------"
   echo "fetching archive"
@@ -64,7 +65,8 @@ function main () {
   echo "------------------------"
   echo "compressing archive"
   tool_path=$(find_tool_path)
-  bsdtar -cJf "/cache/${NAME}-${TOOL_VERSION}.tar.xz" -C "${tool_path}" "${TOOL_VERSION}"
+  bsdtar -cJf "/cache/${TOOL_NAME}-${TOOL_VERSION}.tar.xz" -C "${tool_path}" "${TOOL_VERSION}"
 }
 
+check_semver "${TOOL_VERSION}" all
 main

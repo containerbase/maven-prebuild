@@ -11,4 +11,6 @@ ENV TOOL_NAME=maven
 
 COPY bin /usr/local/bin
 
+ARG DEBUG
+
 RUN install-builder.sh
