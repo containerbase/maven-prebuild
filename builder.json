@@ -1,0 +1,10 @@
+{
+  "image": "maven",
+  "depName": "maven",
+  "lookupName": "org.apache.maven:maven",
+  "datasource": "maven",
+  "versioning": "semver",
+  "startVersion": "3.0.4",
+  "ignoredVersions": [],
+  "allowedVersions": "3.0.4"
+}
