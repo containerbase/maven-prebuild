@@ -3,7 +3,7 @@
 set -e
 
 # shellcheck source=/dev/null
-#. /usr/local/containerbase/util.sh
+. /usr/local/containerbase/util.sh
 
 # trim leading v
 TOOL_VERSION=${1#v}

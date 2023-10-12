@@ -3,7 +3,7 @@
 set -e
 
 # shellcheck source=/dev/null
-#. /usr/local/containerbase/util.sh
+. /usr/local/containerbase/util.sh
 
 mkdir -p /cache
 
