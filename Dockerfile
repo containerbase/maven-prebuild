@@ -1,4 +1,4 @@
-FROM ghcr.io/containerbase/base:11.11.3@sha256:65f43130053d6e1d2915528a3d5dfe2143e0a3ad17b1ab0f1d4ade1aafb26b00
+FROM ghcr.io/containerbase/base:11.11.4@sha256:0a082adc453fc0d8436c54267b95b76b2e9c4750e0b40c1348d8abd30af71d51
 
 # required to test maven
 # TODO: only lts
