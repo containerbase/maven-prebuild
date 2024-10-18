@@ -3,7 +3,7 @@ FROM ghcr.io/containerbase/base:12.0.7@sha256:f6dc1a4b29c4bef61fb33eea223a955d16
 # required to test maven
 # TODO: only lts
 # renovate: datasource=java-version
-RUN install-tool java-jre 17.0.12+7
+RUN install-tool java-jre 17.0.13+11
 
 ENTRYPOINT [ "dumb-init", "--", "builder.sh" ]
 
