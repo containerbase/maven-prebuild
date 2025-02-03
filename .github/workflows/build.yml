@@ -19,22 +19,16 @@ concurrency:
 permissions:
   contents: read
 
-env:
-  HUSKY: 0
-
 jobs:
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
-      - name: enable corepack
-        run: corepack enable
-
-      - name: install deps
-        run: pnpm install
+      - name: ⚙️ Setup
+        uses: containerbase/internal-tools/setup@fcbde3cdedad26eabf59776988e2a4b47fee98e5 # v3.7.0
+        with:
+          save-cache: true
 
       - name: lint
         run: pnpm lint
@@ -50,6 +44,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          show-progress: false
 
       - name: binary-builder
         uses: containerbase/internal-tools@bbbf98bb61968071a4052c89fccd25a292d69c73 # v3.5.22
