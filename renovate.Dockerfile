@@ -6,4 +6,4 @@
 FROM scratch
 
 # renovate: datasource=maven packageName=org.apache.maven:maven
-RUN install-tool maven 3.9.11
+RUN install-tool maven 3.9.12
