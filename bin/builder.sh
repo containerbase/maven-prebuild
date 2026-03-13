@@ -18,10 +18,10 @@ function main () {
   local tool_path
   local versioned_tool_path
   local file
-  # https://archive.apache.org/dist/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
-  local URL='https://archive.apache.org/dist'
-  local file_name="apache-${TOOL_NAME}-${TOOL_VERSION}-bin.tar.gz"
-  local file_url="${TOOL_NAME}/${TOOL_NAME}-${MAJOR}/${TOOL_VERSION}/binaries/${file_name}"
+  # https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.tar.gz
+  local URL='https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven'
+  local file_name="apache-maven-${TOOL_VERSION}-bin.tar.gz"
+  local file_url="${TOOL_VERSION}/${file_name}"
 
   local checksum_file
   local checksum_algo

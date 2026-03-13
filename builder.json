@@ -1,7 +1,7 @@
 {
   "image": "maven",
   "depName": "maven",
-  "lookupName": "org.apache.maven:maven",
+  "lookupName": "org.apache.maven:apache-maven",
   "datasource": "maven",
   "versioning": "semver",
   "startVersion": "3.0.4",
