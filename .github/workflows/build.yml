@@ -26,7 +26,7 @@ jobs:
 
     steps:
       - name: ⚙️ Setup
-        uses: containerbase/internal-tools/setup@b29c63c57dd3f5cccfba5e58416f531c23b9e122 # v4.3.0
+        uses: containerbase/internal-tools/setup@49821e3847c190a6a7d12c2ed7d92b45dee11a31 # v4.4.0
         with:
           save-cache: true
 
@@ -48,7 +48,7 @@ jobs:
           show-progress: false
 
       - name: binary-builder
-        uses: containerbase/internal-tools@b29c63c57dd3f5cccfba5e58416f531c23b9e122 # v4.3.0
+        uses: containerbase/internal-tools@49821e3847c190a6a7d12c2ed7d92b45dee11a31 # v4.4.0
         with:
           command: binary-builder
           dry-run: ${{github.ref_name != 'main'}}
@@ -80,7 +80,7 @@ jobs:
 
       - name: Deploy release list to GitHub Pages
         id: deployment
-        uses: containerbase/internal-tools/publish-releases@b29c63c57dd3f5cccfba5e58416f531c23b9e122 # v4.3.0
+        uses: containerbase/internal-tools/publish-releases@49821e3847c190a6a7d12c2ed7d92b45dee11a31 # v4.4.0
         with:
           command: release-list
           token: ${{ secrets.GITHUB_TOKEN }}
