@@ -1,9 +1,9 @@
 {
+  "$schema": "https://raw.githubusercontent.com/containerbase/internal-tools/refs/heads/main/schema.json",
   "image": "maven",
   "depName": "maven",
   "lookupName": "org.apache.maven:apache-maven",
   "datasource": "maven",
-  "versioning": "semver",
   "startVersion": "3.0.4",
   "ignoredVersions": [],
   "allowedVersions": ">=3.0.4"
