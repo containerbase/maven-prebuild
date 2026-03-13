@@ -53,3 +53,34 @@ jobs:
           command: binary-builder
           dry-run: ${{github.ref_name != 'main'}}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+
+    concurrency:
+      group: publish
+      cancel-in-progress: true
+
+    needs:
+      - build
+
+    permissions:
+      contents: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          show-progress: false
+
+      - name: Deploy release list to GitHub Pages
+        id: deployment
+        uses: containerbase/internal-tools@b29c63c57dd3f5cccfba5e58416f531c23b9e122 # v4.3.0
+        with:
+          command: release-list
+          token: ${{ secrets.GITHUB_TOKEN }}
