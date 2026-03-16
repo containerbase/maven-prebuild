@@ -66,7 +66,7 @@ jobs:
       - build
 
     permissions:
-      contents: write
+      pages: write
       id-token: write
 
     environment:
@@ -82,5 +82,4 @@ jobs:
         id: deployment
         uses: containerbase/internal-tools/publish-releases@eaf6cb9f3d170809caa0f8c4bd777d2e97f087b4 # v4.4.6
         with:
-          command: release-list
           token: ${{ secrets.GITHUB_TOKEN }}
