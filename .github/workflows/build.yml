@@ -32,6 +32,10 @@ jobs:
 
       - name: lint
         run: pnpm lint
+      - name: Check workflow files
+        uses: docker://ghcr.io/jdx/jactionlint:1.8.2@sha256:5515b269082f92ee0962ccc236df3300113aedcd4008a2aad5ad0903680b7c67
+        with:
+          args: --color
 
   build:
     runs-on: ubuntu-latest
