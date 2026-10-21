@@ -14,7 +14,8 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref_name }}
-  cancel-in-progress: true
+  # don't cancel a running release or deployment on main
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 permissions:
   contents: read
@@ -74,6 +75,7 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
 
     needs:
       - lint
@@ -99,10 +101,12 @@ jobs:
   publish:
     if: github.ref_name == 'main'
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     concurrency:
       group: publish
-      cancel-in-progress: true
+      # let a running deployment finish
+      cancel-in-progress: false
 
     needs:
       - build
