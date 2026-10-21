@@ -4,7 +4,7 @@ Prebuild maven for containerbase
 
 ## Development
 
-`mise install` installs Node.js, pnpm, jactionlint, shellcheck, zizmor and the dependencies.
+`mise install` installs Node.js, pnpm, jactionlint, shellcheck and zizmor, then `pnpm install --frozen-lockfile` installs the dependencies.
 
 ```bash
 pnpm lint            # pnpm oxfmt-fix to fix the formatting
